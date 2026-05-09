@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+}
+
+.test{
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin: 10px 20px 10px 20px;
+}
+
+.button {
+  width: -webkit-fill-available;
+  margin-left: auto;
+  display: flex;
+  text-align: center;
+  margin: 10px 20px 10px 20px;
+}
+form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.tool-header{
+  margin-bottom: 20px;
+}

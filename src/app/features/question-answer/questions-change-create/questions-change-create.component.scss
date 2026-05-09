@@ -1,0 +1,118 @@
+:host {
+    display: block;
+    margin: 20px;
+}
+
+.example-full-width {
+    width: 100%;
+    max-width: 600px;
+}
+
+.mat-form-field-wrapper {
+    margin-bottom: 10px;
+}
+
+form {
+    width: 100%;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0 10px;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+} */
+.timepicker{
+    margin: 0px 0px 22px 0px;
+}
+
+
+
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 30px;
+
+  .full-width {
+    grid-column: 1 / -1;
+  }
+
+  .half-width {
+    grid-column: span 1;
+  }
+
+  .editor-container {
+    grid-column: 1 / -1;
+  }
+
+  .mat-form-field,
+  .date-readonly,
+  .mat-checkbox,
+  .submit-button-container {
+    width: 100%;
+  }
+
+  .submit-button-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    button {
+      width: auto;
+      padding: 10px 20px;
+    }
+  }
+
+  .live-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px; // Abstand zwischen "Live" und "Live bis"
+    flex-flow: row wrap;
+
+    .mat-checkbox,
+    .live-valid-to-container {
+      flex: 0 0 auto;
+    }
+
+    .live-valid-to-container {
+      // Stil, um die Größe des Datumsfeldes anzupassen, falls notwendig
+      width: auto;
+    }
+  }
+
+  .filter-container{
+    border-bottom-style: solid;
+    border-bottom-width: var(--mat-table-row-item-outline-width, 1px);
+    border-top-width: var(--mat-table-row-item-outline-width, 1px);
+    border-top-style: solid;
+    margin: 10px 0 10px 0;
+    padding-top: 20px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+
+    .half-width,
+    .full-width,
+    .editor-container {
+      grid-column: 1 / -1;
+    }
+
+    .live-group {
+      flex-direction: column;
+      gap: 5px; // Reduzierter Abstand für kleinere Bildschirme
+  
+      .mat-checkbox,
+      .live-valid-to-container {
+        width: 100%;
+      }
+    }
+  }
+}

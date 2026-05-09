@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+// @import url("@assets/styles/table.scss");
+@import url("../../../../../src/styles/table.scss");
+
+.order-changed{
+  border-color: var(--edited-color);
+  color: var(--edited-color);
+}
+.order-saved{
+  border-color: var(--saved-color);
+  color: var(--saved-color);
+}
+.table-input{
+  margin-top: 20px;
+}

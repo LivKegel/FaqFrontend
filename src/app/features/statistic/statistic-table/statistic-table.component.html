@@ -1,0 +1,58 @@
+<div class="tool-header">
+    <p>Fragen-Übersicht</p>
+  
+  </div>
+  
+  
+  
+  
+  <div class="table-container">
+    <div class="tool-toolbar">
+      <!-- <button mat-stroked-button class="toolbar-right" (click)=">Frage hinzufügen</button> -->
+      <div [formGroup]="formGroup">
+        <app-iniselectfield [label]="'Zeitraum'" [options]="daySelect" formControlName="daysFormControl" onchange="changeDays()" style=" margin-bottom: -15px"></app-iniselectfield>
+      </div>
+
+    </div>
+    @defer () {
+      <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+        
+  
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Frage </th>
+          <td mat-cell *matCellDef="let element">{{element.question_name}} </td>
+        </ng-container>
+  
+
+  
+        <ng-container matColumnDef="count">
+          <th mat-header-cell *matHeaderCellDef> Anzahl Aufrufe </th>
+          <td mat-cell *matCellDef="let element"> {{element.count}} </td>
+        </ng-container>
+
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr class="client-row" [class.even-row]="even" mat-row *matRowDef="let row; columns: displayedColumns; let even=even"></tr>
+  
+        
+      </table>
+    }
+    <!-- <mat-paginator #paginator
+    class="paginator"
+    (page)="handlePageEvent($event)"
+    [length]="apiResult.count"
+    [pageSize]="10"
+    [showFirstLastButtons]="true"
+    [pageSizeOptions]="[10,25,50]"
+    aria-label="Select page">
+    </mat-paginator> -->
+
+    <mat-paginator #paginator
+    class="paginator"
+    [pageSize]="10"
+    [showFirstLastButtons]="true"
+    [pageSizeOptions]="[10,25,50]"
+    aria-label="Select page">
+    </mat-paginator>
+  </div>

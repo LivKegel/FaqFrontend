@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  margin: 20px;
+  // height: 100%;
+}
+
+@import url("../../../../src/styles/table.scss");
+
+.order-changed{
+  border-color: var(--edited-color) !important;
+  color: var(--edited-color) !important;
+}
+.order-saved{
+  border-color: var(--saved-color) !important;
+  color: var(--saved-color) !important;
+}
+.table-input{
+  margin-top: 20px;
+}

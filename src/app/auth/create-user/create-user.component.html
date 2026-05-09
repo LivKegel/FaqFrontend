@@ -1,0 +1,9 @@
+fgddfdfdfd
+
+
+<form (submit)="createUser()" [formGroup]="formGroup">
+    <input type="text" formControlName="username" name="username" placeholder="Benutzername" required>
+    <input type="email" formControlName="email" name="email" placeholder="E-Mail" required>
+    <input type="password" formControlName="password" name="password" placeholder="Passwort" required>
+    <button type="submit">Benutzer erstellen</button>
+  </form>

@@ -1,0 +1,91 @@
+:host {
+  display: block;
+  height: 100%;
+}
+.body{
+  margin: 0;
+  background-color: #ededed ;
+}
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: auto;
+  border: 0;
+  box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);
+}
+
+.sidenav {
+  background: #262626;
+}
+.active{
+  background: #706f6f;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.home-link{
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
+.sidenav-item{
+  height: 60px;
+  padding: 30px 0 30px 0;
+
+  :hover{
+    background: #706f6f;
+  }
+}
+
+
+.icon-text-center {
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  height: 60px;
+}
+.text-center{
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  height: auto;
+  padding: 0;
+}
+.large-icon {
+  font-size: 35px;
+    height: 35px;
+    width: 35px;
+}
+.logo{
+  background-color: #002d59;
+  width: 6em;
+  height: 5.6rem;
+  transform-origin: top left;
+  width: 7.5rem;
+}
+.sidenav-button-container{
+  bottom: 0;
+  height: 50px;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 7.5em;
+}
+.footer{
+  padding: 0;
+  height: 20px !important;
+
+}

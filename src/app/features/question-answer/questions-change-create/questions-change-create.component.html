@@ -1,0 +1,111 @@
+<div class="tool-header">
+@if(!question.new){
+  <p>FRAGE-BEARBEITEN</p>
+}@else{
+  <p>FRAGE-HINZUFÜGEN</p>
+}
+</div>
+
+
+
+  <form [formGroup]="questionAnswerForm" (ngSubmit)="onSubmit()" (change)="markTabAsChanged()">
+    <div class="tool-toolbar">
+      <button mat-stroked-button class="toolbar-right" type="submit">@if(!question.new){speichern}@else{hinzufügen}</button>
+    </div>
+    <div class="form-container">
+      <mat-form-field class="full-width" color="accent">
+        <mat-label>Frage:</mat-label>
+        <input matInput formControlName="question">
+        
+      </mat-form-field>
+      @defer () {
+        <div class="mat-form-field-wrapper full-width">
+          <editor [formControl]="$any(questionAnswerForm.controls['answer'])" [init]="{
+            
+            base_url: '/tinymce',
+            suffix: '.min',
+            promotion: false,
+            plugins: 'lists link image table help wordcount'  
+          }"></editor>
+        </div>
+      }@placeholder (minimum 300ms) {
+        
+      }
+
+      <mat-form-field class="full-width" color="accent">
+        <mat-label>Schlagwörter:</mat-label>
+        <input matInput formControlName="tags">
+      </mat-form-field>
+
+      <!-- <div class="date-readonly full-width">
+        <mat-label>Letzte Änderung:</mat-label>
+        {{ lastUpdate | date: 'dd.MM.yyyy' }}
+      </div> -->
+
+
+      <div class="live-group">
+        <p class="half-width"><mat-checkbox formControlName="live">Live</mat-checkbox></p>
+          
+        <app-inidatefield class="half-width live-valid-to-container" label="Live bis:" formControlName="live_valid_to"></app-inidatefield>
+        
+      </div>
+      <div class="live-group full-width">
+        <mat-form-field class="example-full-width" color="accent">
+          <mat-label>Status:</mat-label>
+          <input matInput formControlName="status">
+        </mat-form-field>
+        
+        <app-inidatefield class="half-width live-valid-to-container" label="Status gültig bis:" formControlName="status_valid_to"></app-inidatefield>
+      </div>
+
+      <!-- TODO if für readonly Nutzer if  -->
+
+      <div class="full-width live-group">
+        <app-iniselectfield [options]="approvedOptions" formControlName="approved" label="Freigegeben:"></app-iniselectfield>
+      </div>
+
+      
+      <p>Filter</p>
+
+      <div class="full-width live-group filter-container">
+        @for(filter of filterOptions; track $index){
+            <app-iniselectfield [multiple]="true" [options]="filter.options" [formControlName]="'filterGroup' + $index" [label]="filter.label"></app-iniselectfield>
+        }
+      </div>
+      
+
+      <!-- <mat-form-field class="full-width">
+        <mat-label>Freigegeben:</mat-label>
+        <input matInput formControlName="approved">
+      </mat-form-field> -->
+
+      <mat-form-field class="half-width" color="accent">
+        <mat-label>Kontaktmail:</mat-label>
+        <input matInput formControlName="contact_mail">
+        
+      </mat-form-field>
+
+      
+      
+      <p class="half-width"><mat-checkbox formControlName="email_has_sent">E-Mail wurde bereits versendet:</mat-checkbox></p>
+
+      <mat-checkbox [checked]="showNotiz"(change)="showNotiz = !showNotiz">Notiz</mat-checkbox>
+
+      @if(showNotiz){
+        <mat-form-field class="full-width" color="accent">
+          <mat-label>Notiz:</mat-label>
+          <input matInput formControlName="quick_note">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" color="accent">
+          <mat-label>Ausführliche Notiz:</mat-label>
+          <textarea matInput formControlName="long_note"></textarea>
+        </mat-form-field>
+      }
+      
+    
+    </div>
+    <div class="tool-toolbar">
+      <button mat-stroked-button class="toolbar-right" type="submit">@if(!question.new){speichern}@else{hinzufügen}</button>
+    </div>
+  </form>

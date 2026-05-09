@@ -1,0 +1,53 @@
+<mat-form-field class="date-field" color="accent">
+    <mat-label>{{label}}</mat-label>
+    <!-- Input-Feld -->
+    <input
+      matInput
+      class="date-input"
+      readonly="true"
+      [matDatepicker]="picker"
+      placeholder="Datum"
+      [formControl]="formControl"
+    />
+    {{ formControl.value | date : "E dd.MM.yyyy" }}
+    <!-- Kalender-Icon (mat-datepicker-toggle) direkt nach dem input -->
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="picker"
+      class="datepicker-toggle"
+    ></mat-datepicker-toggle>
+  
+    <mat-datepicker #picker disabled="false"></mat-datepicker>
+  
+    <!-- Vorheriger Tag Button absolut innerhalb des mat-form-field positionieren -->
+    <button
+    mat-icon-button
+    type="button"
+    aria-label="Clear value"
+    (click)="clearValue()"
+    class="clear-value-button"
+    *ngIf="formControl.value"
+  >
+    <mat-icon>clear</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      type="button"
+      aria-label="Previous day"
+      (click)="prevDay()"
+      class="prev-day-button"
+    >
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+  
+    <!-- Nächster Tag Button absolut innerhalb des mat-form-field positionieren -->
+    <button
+      mat-icon-button
+      type="button"
+      aria-label="Next day"
+      (click)="nextDay()"
+      class="next-day-button"
+    >
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </mat-form-field>

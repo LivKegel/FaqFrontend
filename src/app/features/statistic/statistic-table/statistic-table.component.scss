@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  margin: 20px;
+}
+@import url("../../../../styles/table.scss");
+
+.mat-mdc-form-field-subscript-wrapper{
+  display: none;
+}
+::ng-deep .mat-form-field-underline {
+  display: none;
+}

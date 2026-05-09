@@ -1,0 +1,37 @@
+.date-field {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  .date-input {
+    cursor: alias;
+    display: none;
+  }
+
+  .datepicker-toggle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 28px;
+  }
+
+  .prev-day-button {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .next-day-button {
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .clear-value-button {
+    position: absolute;
+    right: 130px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--delete-color);
+  }

@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+.tool-toolbar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+
+  // Stil für jedes Item in der Toolbar
+  .toolbar-item {
+    flex: 1;
+    text-align: center;
+
+    // Unterschiedliche Ausrichtung basierend auf der align-Eigenschaft
+    &.align-left {
+      text-align: left;
+    }
+
+    &.align-right {
+      text-align: right;
+    }
+
+    &.align-center {
+      text-align: center;
+    }
+  }
+}

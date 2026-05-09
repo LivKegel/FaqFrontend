@@ -1,0 +1,17 @@
+
+
+<form (submit)="login()" [formGroup]="formGroup">
+    <div class="tool-header">
+      <p>Login</p>
+    </div>
+
+    <mat-form-field class="test">
+      <input type="text" matInput placeholder="Benutzername" formControlName="username">
+    </mat-form-field>
+    <!-- <input type="text" formControlName="username" name="username" placeholder="Benutzername" required> -->
+    <mat-form-field class="test">
+      <input type="password" matInput placeholder="Passwort" formControlName="password">
+    </mat-form-field>
+    <!-- <input type="password" formControlName="password" name="password" placeholder="Passwort" required> -->
+    <button mat-stroked-button class="button" type="submit">Login</button>
+</form>

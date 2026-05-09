@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+.mdc-tab{
+  // display: inline-block;
+  max-width: fit-content; /* Breite anpassen */
+  
+
+  .mdc-tab-indicator__content--underline{
+    // background-color: red;
+    border-color: #00cbff !important;
+  }
+  .mat-mdc-icon-button:hover .mat-mdc-button-persistent-ripple::before {
+    opacity: 0.3;
+  }
+
+  .close-button{
+    color: #00cbff !important;
+  }
+  .edited{
+    color: #c3bb55  !important;
+  }
+  .saved{
+    color: #72c67b  !important;
+  }
+  .closed{
+    color: #f01313b8   !important;
+  }
+
+
+}

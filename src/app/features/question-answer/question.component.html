@@ -1,0 +1,34 @@
+<mat-tab-group [backgroundColor]="'primary'" [selectedIndex]="selected" (selectedTabChange)="changeActiveTab($event)">
+    <mat-tab matTooltip="" [label]="'Fragen-Übersicht'">
+            <ng-template mat-tab-label>
+                <mat-icon>home</mat-icon>
+                <span>
+                    Fragen-Übersicht
+                </span>
+            </ng-template>
+        @defer () {
+            <app-list (questionEvent)="handleQuestionEvent($event)"></app-list>
+        }
+    </mat-tab>
+    @for (tab of tabs; track $index) {
+            <mat-tab label="">
+                <ng-template mat-tab-label>
+                    <span  [matTooltip]="tab.question">
+                        @if(tab.question !== "")
+                        {
+                            {{tab.question | slice:0:20}}...
+                        }@else {
+                            Neue Frage
+                        }
+                    </span>
+                    <button class="close-button" [class.edited]="tab.edited" [class.saved]="tab.saved" [class.closed]="tab.closed"  mat-icon-button (click)="closeTab(tab, $index)">
+                        <mat-icon>close</mat-icon>
+                        
+                    </button>
+                </ng-template>
+                <ng-template matTabContent>
+                    <app-questions-change-create [filterGroups]="filterGroups" (questionEvent)="updateQuestionTab($event, $index)" [question]="tab"></app-questions-change-create>
+                </ng-template>
+            </mat-tab>
+        }
+</mat-tab-group>

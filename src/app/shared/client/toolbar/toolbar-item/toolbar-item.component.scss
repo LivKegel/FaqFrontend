@@ -1,0 +1,20 @@
+:host {
+  display: block;
+}
+.toolbar-item {
+  flex: 1;
+  text-align: center;
+
+  // Unterschiedliche Ausrichtung basierend auf der align-Eigenschaft
+  &.align-left {
+    text-align: left;
+  }
+
+  &.align-right {
+    text-align: right;
+  }
+
+  &.align-center {
+    text-align: center;
+  }
+}

@@ -1,0 +1,99 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="mat-elevation-z10 sidenav " fixedInViewport="true" 
+      opened="true"
+      disableClose="true"
+      mode="side"
+      >
+    <mat-toolbar 
+      color="primary" class="logo">
+      
+
+    </mat-toolbar>
+    
+    <mat-nav-list style="padding: 0px;">
+      <a class="sidenav-item" mat-list-item routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <div class="icon-text-center">
+          <mat-icon class="large-icon">edit Document</mat-icon>
+          Bearbeiten
+        </div>
+      </a>
+
+      <a class="sidenav-item" mat-list-item routerLink="filter" routerLinkActive="active">
+        <div class="icon-text-center">
+          <mat-icon class="large-icon" svgIcon="filter_icon"></mat-icon>
+          Filter
+        </div>
+      </a>
+
+      <a class="sidenav-item" mat-list-item routerLink="a" routerLinkActive="active">
+        <div class="icon-text-center">
+          <mat-icon class="large-icon">done_all</mat-icon>
+          Freigeben
+        </div>
+      </a>
+
+      <a class="sidenav-item" mat-list-item routerLink="statistik" routerLinkActive="active">
+        <div class="icon-text-center">
+          <mat-icon class="large-icon" svgIcon="statistics_icon"></mat-icon>
+          Statistik
+        </div>
+      </a>
+
+      <a class="sidenav-item" mat-list-item routerLink="c" routerLinkActive="active">
+        <div class="icon-text-center">
+          <mat-icon class="large-icon">security</mat-icon>
+          Admin
+        </div>
+      </a>
+      
+      <div class="sidenav-button-container">
+        <a class="sidenav-item" mat-list-item routerLink="c" routerLinkActive="active">
+          <div class="icon-text-center">
+            <mat-icon class="large-icon">person</mat-icon>
+            Account
+          </div>
+        </a>
+
+        <a class="sidenav-item" mat-list-item routerLink="c" routerLinkActive="active">
+          <div class="icon-text-center">
+            <mat-icon class="large-icon">logout</mat-icon>
+            Logout
+          </div>
+        </a>
+
+        <a class="sidenav-item footer" mat-list-item routerLink="c" routerLinkActive="active">
+          <div class="text-center">
+            impressum
+          </div>
+        </a>
+
+        <a class="sidenav-item footer" mat-list-item routerLink="c" routerLinkActive="active">
+          <div class="text-center">
+            Datenschutz
+          </div>
+        </a>
+      </div>
+      
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" style="background-color: #000; height: 70px;">
+
+      
+      <a class="home-link" routerLink="">FAQ
+      </a>
+
+
+    </mat-toolbar>
+    <mat-toolbar color="primary" style="background-color: #262626; height: 20px;">
+
+      
+      <a class="home-link" routerLink="">
+      </a>
+    </mat-toolbar>
+    
+    <router-outlet/>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>

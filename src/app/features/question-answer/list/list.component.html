@@ -62,7 +62,7 @@
 
       <ng-container matColumnDef="liveValidUntil">
         <th mat-header-cell *matHeaderCellDef> Live bis </th>
-        <td mat-cell *matCellDef="let element"> {{element.liveValidUntil }} </td>
+        <td mat-cell *matCellDef="let element"> {{element.liveValidUntil | date:"MM/dd/yy" }} </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

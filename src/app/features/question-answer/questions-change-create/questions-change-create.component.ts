@@ -50,14 +50,14 @@ export class QuestionsChangeCreateComponent implements OnInit, OnDestroy{
     answer : new FormControl("", Validators.required),
     tags: new FormControl(""),
     live: new FormControl(""),
-    live_valid_to: new FormControl(""),
+    liveValidUntil: new FormControl(null),
     status: new FormControl(""),
-    status_valid_to: new FormControl(""),
-    quick_note: new FormControl(""),
-    long_note: new FormControl(""),
+    statusValidUntil: new FormControl(null),
+    quickNote: new FormControl(""),
+    longNote: new FormControl(""),
     approved: new FormControl(this.approvedOptions[0].value),
-    contact_mail : new FormControl(""),
-    email_has_sent: new FormControl(""),
+    contactMail : new FormControl(""),
+    emailHasSent: new FormControl(0),
     // filter: new FormControl("", Validators.required),
   });
   
@@ -66,10 +66,10 @@ export class QuestionsChangeCreateComponent implements OnInit, OnDestroy{
   ngOnInit() {
     if(this.question){
       this.questionAnswerForm.patchValue(this.question);
-      this.lastUpdate = this.question.create_date;
+      this.lastUpdate = this.question.createdAt;
 
       // colapse notiz if empty
-      this.showNotiz = this.question.quick_note !== "" || this.question.long_note !== "";
+      this.showNotiz = this.question.quickNote !== "" || this.question.longNote !== "";
       this.createFilterOptions();
     }
   }
@@ -110,7 +110,7 @@ export class QuestionsChangeCreateComponent implements OnInit, OnDestroy{
   createFilterOptions(){
     
     this.filterGroups.forEach((filterGroup, index) => {
-      const selectedFilters : string[] = this.question.filter.flatMap(filterId => 
+      const selectedFilters : string[] = this.question.filters.flatMap(filterId => 
         this.filterGroups.flatMap(filterGroup => 
           filterGroup.subfilters.map(subfilter => subfilter.id?.toString())
         ).includes(filterId?.toString()) ? [filterId?.toString()] : []

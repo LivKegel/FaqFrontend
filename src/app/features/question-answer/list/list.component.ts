@@ -79,12 +79,12 @@ export class ListComponent implements OnDestroy, OnInit {
                 this.displayedColumns.push('status');
                 statusFound = true;
             }
-            if (!quickNoteFound && question.quick_note != "") {
-                this.displayedColumns.push('quick_note');
+            if (!quickNoteFound && question.quickNote != "") {
+                this.displayedColumns.push('quickNote');
                 quickNoteFound = true;
             }
-            if (!liveValidToFound && question.live_valid_to != null) {
-                this.displayedColumns.push('live_valid_to');
+            if (!liveValidToFound && question.liveValidUntil != null) {
+                this.displayedColumns.push('liveValidUntil');
                 liveValidToFound = true;
             }
             
